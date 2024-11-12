@@ -1,0 +1,72 @@
+<?php
+// 1 Дано число. Проверьте, отрицательное оно или нет. Выведите об этом информацию в консоль.
+$num = -1;
+if ($num < 0)
+	echo "Число $num отрицательное\n";
+else
+	echo "Число $num неотрицательное\n";
+	
+// 2 Дана строка. Выведите в консоль длину этой строки.
+$str = '¡Hola mi viejo amigos!';
+echo strlen($str) . "\n";
+
+// 3 Дана строка. Выведите в консоль последний символ строки.
+$stroka = 'klubnika bomba chesna govorya';
+$arr = str_split($stroka);
+//print_r($arr);
+$lastIndex = count($arr) - 1;
+$lastSymbol = $arr[$lastIndex];
+echo $lastSymbol . "\n";
+
+// 4 Дано число. Проверьте, четное оно или нет.
+$number = 42;
+if ($number % 2 == 0)
+	echo "Число $number четное\n";
+else
+	echo "Число $number нечетное\n";
+	
+// 5 Даны два слова. Проверьте, что первые буквы этих слов совпадают.
+$word1 = "boost";
+$word2 = "button";
+$arr1 = str_split($word1);
+$arr2 = str_split($word2);
+if ($arr1[0] == $arr2[0])
+	echo "Первые буквы данных слов совпадают\n";
+else
+	echo "Первые буквы данных слов не совпадают\n";
+
+// 6 Дано число. Выведите в консоль первую цифру этого числа.
+$chislo = 5432;
+$arrFirst = str_split((string)$chislo);
+echo $arrFirst[0] . "\n";
+
+// 7 Дана строка. Если в этой строке более одного символа, выведите в консоль предпоследний символ этой строки.
+$justStr = "yeap";
+$arrr = str_split($justStr);
+$countSym = count($arrr);
+if ($countSym >= 1){
+	$indexSym = $countSym - 2;
+	echo $arrr[$indexSym] . "\n";
+}
+
+// 8 функция которая округляет все числа в массиве
+$massiv = [23.4, 15.925, 6.5, 754.12];
+foreach ($massiv as $value){
+	echo round($value) . " ";
+}
+echo "\n" . "\n";
+
+// 9 функция которая обрезает все строки в массиве до 5 символов или добавляет к ней любую букву если изначально символов меньше
+$lastArray = ["mordochka", "koti", "usi", "hvostik"];
+//print_r($lastArray);
+$result = [];
+foreach ($lastArray as $value){
+	if (strlen($value) < 5){
+		$result = str_pad($value, 5, "U");
+		echo $result . "\n";
+	}
+	if (strlen($value) > 5){
+		$result = substr($value, 0, 5);
+		echo $result . "\n";
+	}
+}
